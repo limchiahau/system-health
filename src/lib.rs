@@ -1,3 +1,12 @@
+//
+// Copyright 2021 Lim Chia Hau.
+//
+// Licensed under the GNU GENERAL PUBLIC LICENSE Version 3 <LICENSE or
+// https://www.gnu.org/licenses/gpl-3.0.en.html>. This file may not be copied, 
+// modified, or distributed except according to those terms.
+//
+
+
 use std::process::Command;
 use std::string::FromUtf8Error;
 
@@ -13,6 +22,7 @@ pub fn status() -> Result<String, FromUtf8Error>{
 	system_status.map(|x| take_lines(2,&x))
 }
 
+
 fn take_lines(num_lines: usize, string: &str) -> String {
 	let lines = string
 		.lines()
@@ -26,7 +36,6 @@ fn take_lines(num_lines: usize, string: &str) -> String {
 	
 	result
 }
-
 
 
 pub mod system {
